@@ -1,12 +1,44 @@
-﻿<Window x:Class="CardShuffling.MainWindow"
+﻿<Window x:Name="Page1" x:Class="CardShuffling.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CardShuffling"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" Loaded="Page1_Loaded">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <RichTextBox x:Name="CardList" Grid.RowSpan="2" Grid.Column="1" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+        <Viewbox Grid.Row="1">
+            <Button x:Name="ShuffleButton" Content="Shuffle"  Width="125" Height="33" Click="ShuffleButton_Click" />
+
+        </Viewbox>
+
+        <Grid>
+            <Grid.RowDefinitions>
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="DisplayCard1" Grid.Column="0" Source="D:\CardShuffling\CardShuffling\Cards\Monaco Card.png"/>
+            <Image x:Name="DisplayCard2" Grid.Column="1" Source="D:\CardShuffling\CardShuffling\Cards\Monaco Card.png"/>
+            <Image x:Name="DisplayCard3" Grid.Column="2" Source="D:\CardShuffling\CardShuffling\Cards\Monaco Card.png"/>
+            <Image x:Name="DisplayCard4" Grid.Column="3" Source="D:\CardShuffling\CardShuffling\Cards\Monaco Card.png"/>
+            <Image x:Name="DisplayCard5" Grid.Column="4" Source="D:\CardShuffling\CardShuffling\Cards\Monaco Card.png"/>
+        </Grid>
     </Grid>
 </Window>
